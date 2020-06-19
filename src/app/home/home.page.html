@@ -1,5 +1,5 @@
 <ion-content [fullscreen]="true">
-    <ion-grid no-padding [fullscreen]="true" style="background-color: blueviolet;">
+    <ion-grid no-padding [fullscreen]="true" style="display: flex; flex-flow: column; background-color: blueviolet;">
         <ion-row>
             <ion-label class="output-label">{{currentString}}</ion-label>
         </ion-row>
@@ -48,7 +48,7 @@
                 </ion-button>
             </ion-col>
         </ion-row>
-        <ion-row style="height: 33.32%;">
+        <ion-row style="flex-grow: 2;">
             <ion-col size="9">
                 <ion-row style="height: 50%;">
                     <ion-col>
