@@ -1,20 +1,84 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-grid no-padding [fullscreen]="true" style="background-color: blueviolet;">
+        <ion-row>
+            <ion-label class="output-label">{{currentString}}</ion-label>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="reset" (click)="reset()">AC</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="reset" (click)="delete()">&#9003;</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="perform('division')">÷</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="perform('multiplication')">*
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('9')">9</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('8')">8</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('7')">7</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="perform('substraction')">-
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('6')">6</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('5')">5</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('4')">4</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="perform('addition')">+
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row style="height: 33.32%;">
+            <ion-col size="9">
+                <ion-row style="height: 50%;">
+                    <ion-col>
+                        <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('3')">3
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('2')">2
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('1')">1
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+                <ion-row style="height: 50%;">
+                    <ion-col size="8">
+                        <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('0')">0
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button class="buttons" expand="full" type="submit" (click)="decimalClicked()">.
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="perform('addition')">+
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
