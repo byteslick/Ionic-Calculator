@@ -15,7 +15,7 @@ export class HomePage {
     }
 
     delete = () => {
-        console.log("Performing Cancel");
+        console.log("Performing Backspace");
     }
 
     perform = (operation) => {

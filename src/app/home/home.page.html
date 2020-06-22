@@ -5,16 +5,17 @@
         </ion-row>
         <ion-row>
             <ion-col>
-                <ion-button class="buttons" expand="full" type="reset" (click)="reset()">AC</ion-button>
+                <ion-button class="reset-button" expand="full" type="reset" (click)="reset()">AC</ion-button>
             </ion-col>
             <ion-col>
-                <ion-button class="buttons" expand="full" type="reset" (click)="delete()">&#9003;</ion-button>
+                <ion-button class="back-button" expand="full" type="reset" (click)="delete()">&#9003;</ion-button>
             </ion-col>
             <ion-col>
-                <ion-button class="buttons" expand="full" type="submit" (click)="perform('division')">÷</ion-button>
+                <ion-button class="operations" expand="full" type="submit" (click)="perform('percentage')">%
+                </ion-button>
             </ion-col>
             <ion-col>
-                <ion-button class="buttons" expand="full" type="submit" (click)="perform('multiplication')">*
+                <ion-button class="operations" expand="full" type="submit" (click)="perform('division')">÷
                 </ion-button>
             </ion-col>
         </ion-row>
@@ -29,7 +30,7 @@
                 <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('7')">7</ion-button>
             </ion-col>
             <ion-col>
-                <ion-button class="buttons" expand="full" type="submit" (click)="perform('substraction')">-
+                <ion-button class="operations" expand="full" type="submit" (click)="perform('multiplication')">*
                 </ion-button>
             </ion-col>
         </ion-row>
@@ -44,7 +45,7 @@
                 <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('4')">4</ion-button>
             </ion-col>
             <ion-col>
-                <ion-button class="buttons" expand="full" type="submit" (click)="perform('addition')">+
+                <ion-button class="operations" expand="full" type="submit" (click)="perform('substraction')">-
                 </ion-button>
             </ion-col>
         </ion-row>
@@ -76,7 +77,7 @@
                 </ion-row>
             </ion-col>
             <ion-col>
-                <ion-button class="buttons" expand="full" type="submit" (click)="perform('addition')">+
+                <ion-button class="operations" expand="full" type="submit" (click)="perform('addition')">+
                 </ion-button>
             </ion-col>
         </ion-row>

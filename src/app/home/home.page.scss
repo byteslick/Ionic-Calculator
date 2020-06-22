@@ -1,35 +1,25 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
 .buttons {
 width: 100%;
 height: 100%;
 border: 1px solid black;
+}
+
+.operations{
+    @extend .buttons;
+    --background: #fd9f2b;
+    --background-activated:  #ec8e1a;
+}
+
+.reset-button{
+    @extend .buttons;
+    --background: #eb4034;
+    --background-activated:  #da3023;
+}
+
+.back-button{
+    @extend .buttons;
+    --background: #363232;
+    --background-activated:  #252121;
 }
 
 .output-label {
@@ -46,7 +36,7 @@ ion-grid {
   }
 
   ion-row {
-    padding: 0px;
+    padding-top: 0px;
     margin: 0px;
     flex-grow: 1;
     flex-shrink: 0;
