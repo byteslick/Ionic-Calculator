@@ -8,6 +8,7 @@ export class CalculatorBrainService {
     private firstInput: number = null;
     displayString: string = '';
     private currentOperation: string = '';
+    private secondInput: boolean = false;
 
     constructor() { }
 
@@ -16,12 +17,16 @@ export class CalculatorBrainService {
         this.displayString = '';
         this.firstInput = null;
         this.currentOperation = '';
+        this.secondInput = false;
     }
 
     public delete = () => {
         console.log("Performing Backspace");
         if (this.displayString.length > 0) {
             this.displayString = this.displayString.substr(0, this.displayString.length - 1);
+            if (parseFloat(this.displayString) == 0) {
+                this.reset();
+            }
         } else {
             this.reset();
         }
@@ -33,8 +38,14 @@ export class CalculatorBrainService {
     }
 
     private evaluate = () => {
-        if (this.firstInput != null) {
-
+        if (this.firstInput != null && this.currentOperation != null) {
+            switch (this.currentOperation) {
+                case '÷': {
+                    // this.displayString = Math.abs(this.firstInput / parseFloat(this.displayString)).toString();
+                }
+            }
+        } else {
+            this.firstInput = parseFloat(this.displayString);
         }
     }
 
@@ -46,19 +57,30 @@ export class CalculatorBrainService {
             if (this.currentOperation != null) {
                 this.evaluate();
             }
+            this.secondInput = true;
             this.currentOperation = operation;
         }
     }
 
     public numberClicked = (number) => {
         console.log(`Number ${ number } pressed.`);
-        this.displayString = this.displayString + number;
+        if (this.secondInput) {
+            this.secondInput = false;
+            this.displayString = number;
+        } else {
+            this.displayString = this.displayString + number;
+        }
     }
 
     public decimalClicked = () => {
         console.log("Decimal Clicked");
-        if (this.displayString.indexOf('.') < 0) {
-            this.displayString = this.displayString + '.';
+        if (this.secondInput || this.displayString.length == 0) {
+            this.secondInput = false;
+            this.displayString = `0.`;
+        } else {
+            if (this.displayString.indexOf('.') < 0) {
+                this.displayString = this.displayString + '.';
+            }
         }
     }
 }

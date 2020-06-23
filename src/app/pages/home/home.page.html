@@ -15,7 +15,7 @@
                 </ion-button>
             </ion-col>
             <ion-col>
-                <ion-button class="operations" expand="full" type="submit" (click)="perform('/')">÷
+                <ion-button class="operations" expand="full" type="submit" (click)="perform('÷')">÷
                 </ion-button>
             </ion-col>
         </ion-row>
@@ -49,35 +49,37 @@
                 </ion-button>
             </ion-col>
         </ion-row>
-        <ion-row style="flex-grow: 2;">
-            <ion-col size="9">
-                <ion-row style="height: 50%;">
-                    <ion-col>
-                        <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('3')">3
-                        </ion-button>
-                    </ion-col>
-                    <ion-col>
-                        <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('2')">2
-                        </ion-button>
-                    </ion-col>
-                    <ion-col>
-                        <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('1')">1
-                        </ion-button>
-                    </ion-col>
-                </ion-row>
-                <ion-row style="height: 50%;">
-                    <ion-col size="8">
-                        <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('0')">0
-                        </ion-button>
-                    </ion-col>
-                    <ion-col>
-                        <ion-button class="buttons" expand="full" type="submit" (click)="decimalClicked()">.
-                        </ion-button>
-                    </ion-col>
-                </ion-row>
+        <!-- <ion-row style="flex-grow: 2;">
+            <ion-col size="9"> -->
+        <ion-row>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('3')">3
+                </ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('2')">2
+                </ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('1')">1
+                </ion-button>
             </ion-col>
             <ion-col>
                 <ion-button class="operations" expand="full" type="submit" (click)="perform('+')">+
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="6">
+                <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('0')">0
+                </ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="buttons" expand="full" type="submit" (click)="decimalClicked()">.
+                </ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="operations" expand="full" type="submit" (click)="perform('=')">=
                 </ion-button>
             </ion-col>
         </ion-row>
