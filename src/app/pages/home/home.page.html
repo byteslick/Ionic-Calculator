@@ -5,7 +5,8 @@
         </ion-row>
         <ion-row>
             <ion-col>
-                <ion-button class="reset-button" expand="full" type="reset" (click)="reset()">AC</ion-button>
+                <ion-button class="reset-button" expand="full" type="reset" (click)="reset()">
+                    {{calcBrain.firstInput == null  ? 'AC' : 'C'}}</ion-button>
             </ion-col>
             <ion-col>
                 <ion-button class="back-button" expand="full" type="reset" (click)="delete()">&#9003;</ion-button>
@@ -49,8 +50,6 @@
                 </ion-button>
             </ion-col>
         </ion-row>
-        <!-- <ion-row style="flex-grow: 2;">
-            <ion-col size="9"> -->
         <ion-row>
             <ion-col>
                 <ion-button class="buttons" expand="full" type="submit" (click)="numberClicked('3')">3
@@ -79,7 +78,7 @@
                 </ion-button>
             </ion-col>
             <ion-col>
-                <ion-button class="operations" expand="full" type="submit" (click)="perform('=')">=
+                <ion-button class="equals-button" expand="full" type="submit" (click)="perform('=')">=
                 </ion-button>
             </ion-col>
         </ion-row>

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CalculatorBrainService {
 
-    private firstInput: number = null;
+    firstInput: number = null;
     displayString: string = '';
     private currentOperation: string = '';
     private secondInput: boolean = false;
@@ -14,10 +14,15 @@ export class CalculatorBrainService {
 
     public reset = () => {
         console.log("Performing Reset");
-        this.displayString = '';
-        this.firstInput = null;
-        this.currentOperation = '';
-        this.secondInput = false;
+        if (this.firstInput != null) {
+            this.displayString = this.firstInput.toString();
+            this.firstInput = null;
+        } else {
+            this.displayString = '';
+            this.firstInput = null;
+            this.currentOperation = '';
+            this.secondInput = false;
+        }
     }
 
     public delete = () => {
@@ -41,12 +46,26 @@ export class CalculatorBrainService {
         if (this.firstInput != null && this.currentOperation != null) {
             switch (this.currentOperation) {
                 case '÷': {
-                    // this.displayString = Math.abs(this.firstInput / parseFloat(this.displayString)).toString();
+                    this.displayString = (this.firstInput / parseFloat(this.displayString)).toString();//Math.abs().toString();
+                    break;
+                }
+                case '*': {
+                    this.displayString = (this.firstInput * parseFloat(this.displayString)).toString();//Math.abs().toString();
+                    break;
+                }
+                case '+': {
+                    this.displayString = (this.firstInput + parseFloat(this.displayString)).toString();//Math.abs().toString();
+                    break;
+                }
+                case '-': {
+                    this.displayString = (this.firstInput - parseFloat(this.displayString)).toString();//Math.abs().toString();
+                    break;
+                } default: { // '=' sign
+                    break;
                 }
             }
-        } else {
-            this.firstInput = parseFloat(this.displayString);
         }
+        this.firstInput = parseFloat(this.displayString);
     }
 
     public perform = (operation) => {

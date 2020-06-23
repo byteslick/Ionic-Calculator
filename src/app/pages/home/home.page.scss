@@ -10,6 +10,12 @@ border: 1px solid black;
     --background-activated:  #ec8e1a;
 }
 
+.equals-button{
+    @extend .buttons;
+    --background: #000;
+    --background-activated:  #000;
+}
+
 .reset-button{
     @extend .buttons;
     --background: #eb4034;
